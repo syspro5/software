@@ -1,0 +1,197 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[11pt,a4paper]{jarticle}
+\usepackage[all, warning]{onlyamsmath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% packages 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{txfonts}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{boites}
+\usepackage{cite}
+%%%%\usepackage{udline}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}\captionsetup{compatibility=false}
+\usepackage[dvipdfmx]{color}
+\usepackage[dvipdfmx]{graphicx} %% must be placed at the last line of ``\usepackage''s
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% margin
+\setlength{\hoffset}{-1in}%
+\setlength{\voffset}{-1in}%
+\setlength{\oddsidemargin}{20truemm}%
+\setlength{\evensidemargin}{20truemm}%
+\setlength{\topmargin}{20truemm}
+\setlength{\headheight}{5truemm}
+\setlength{\headsep}{0truemm}
+\setlength{\textheight}{250truemm}%
+\setlength{\textwidth}{170truemm}%
+\setlength{\marginparsep}{0truemm}
+\setlength{\marginparwidth}{0truemm}
+\setlength{\footskip}{4truemm}
+%\setlength{\columnsep}{10truemm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% paragraph spacing 
+\parskip=0pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% float and caption spacing 
+\abovecaptionskip=0.5\Cvs
+\belowcaptionskip=0.5\Cvs
+\floatsep=1.5\Cvs
+\textfloatsep=1.5\Cvs
+\intextsep=1.5\Cvs
+
+\setcounter{topnumber}{99} % 頁上部の最大float数
+\setcounter{bottomnumber}{99} % 頁下部の 〃            
+\setcounter{totalnumber}{99} % １頁の 〃  
+\setcounter{dbltopnumber}{99} % twocolumn時の頁上部の最大float数
+\renewcommand\topfraction{0.99} % 頁上部のfloatで占める最大の割合
+\renewcommand\bottomfraction{0.99} % 頁下部の 〃
+\renewcommand\textfraction{0.25} % １頁のテキスト部の占める最小割合
+\renewcommand\floatpagefraction{0.75} % floatが単独頁になるときの最小割合
+\renewcommand\dbltopfraction{0.99} % twocolumn時の topfraction
+\renewcommand\dblfloatpagefraction{0.75} % twocolumn時の floatpagefraction
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% page style
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{}
+\lhead{}
+\cfoot{\textit{\thepage~/~\pageref{LastPage}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% name 
+%\renewcommand{\figurename}{Fig. }
+%\renewcommand{\tablename}{Table }
+%\renewcommand{\bibname}{文献}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% depth of section number 
+\setcounter{secnumdepth}{4} %% depth of section number
+\setcounter{tocdepth}{1} %% depth of table of contents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% equation 
+\allowdisplaybreaks
+
+%%%%%%%% check mark %%%%%%%%
+\usepackage{pifont}
+\newcommand{\cmark}{\large{\ding{51}}}
+\newcommand{\xmark}{\large{\ding{55}}\,}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% \renewcommand{\thesection}{\@arabic\c@section.} % sectionの書式
+%% \renewcommand{\sectionmark}[1]{
+%%   \markright{\S\thesection\hskip1zw#1}
+%% }
+
+%% \renewcommand{\section}{
+%%   \@startsection{section}% #1 見出し
+%%                 {1}% #2 見出しのレベル
+%%                 {\z@}% #3 横組みの場合，見出し左の空き(インデント量)
+%%                 {0.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}% #4 見出し上の空き
+%%                 {0.01\Cvs \@plus.1\Cdp}% #5 見出し下の空き (負の値なら見出し後の空き)
+%%                 {\reset@font\normalsize\bfseries}% 揃え
+%% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% thebibliography 
+%% \renewcommand{\@cite}[1]{\textsuperscript{#1)}}
+%% \renewcommand{\@biblabel}[1]{#1)}
+%% \newcommand{\@bibtitlesty}{\chapter*}
+%% \renewenvironment{thebibliography}[1]{
+%%   \clearpage
+%%   \markright{文献}
+%%   %  \chapter*{\bibname}
+%%   %  \section*{\bibname}
+%%   \@bibtitlesty{\bibname}
+%%   \list{\@biblabel{\@arabic\c@enumiv}}%
+%%        {\settowidth\labelwidth{\@biblabel{#1}}%
+%%          \leftmargin\labelwidth
+%%          \advance\leftmargin\labelsep
+%%          \@openbib@code
+%%          \usecounter{enumiv}%
+%%          \let\p@enumiv\@empty
+%%          \renewcommand\theenumiv{\@arabic\c@enumiv}
+%%        }%
+%%        \sloppy
+%%        \clubpenalty4000
+%%        \@clubpenalty\clubpenalty
+%%        \widowpenalty4000%
+%%        \sfcode`\.\@m
+%% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% figure 
+%\newif\iffig\figfalse
+%\renewenvironment{figure}
+%                 {\figtrue\@float{figure}}
+%                 {\end@float\figfalse}
+%\renewenvironment{figure*}
+%                 {\figtrue\@dblfloat{figure}}
+%                 {\end@dblfloat\figfalse}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% table 
+%\newif\iftab\tabfalse
+%\renewenvironment{table}
+%                 {\tabtrue\@float{table}}
+%                 {\end@float\tabfalse}
+%\renewenvironment{table*}
+%                 {\tabtrue\@dblfloat{table}}
+%                 {\end@dblfloat\tabfalse}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% caption 
+%\def\fnum@figure{\figurename\thefigure}
+%\def\fnum@table{\tablename\thetable}
+%\long\def\@makecaption#1#2{
+%  \vskip\abovecaptionskip
+%  \sbox\@tempboxa{#1 #2}
+%  \ifdim \wd\@tempboxa>\hsize
+%    #1 #2\par
+%  \else
+%    \global\@minipagefalse
+%    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}
+%  \fi
+%  \vskip\belowcaptionskip
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% appendix 
+\renewcommand{\appendix}{\par
+  \setcounter{chapter}{0}%
+  \setcounter{section}{0}%
+  \renewcommand{\@chapapp}{\appendixname}%
+  \renewcommand{\@chappos}\space%
+  \renewcommand{\thechapter}{\@Alph\c@chapter}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatother %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
